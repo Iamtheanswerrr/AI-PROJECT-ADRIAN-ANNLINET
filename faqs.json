@@ -1,0 +1,107 @@
+[
+    {
+        "question": "How do I borrow books from the library?",
+        "answer": "You can borrow books by presenting your library card at the front desk or using the self-checkout machine.",
+        "tags": ["borrow", "checkout", "library card", "loan", "get books"]
+    },
+    {
+        "question": "How can I renew a book?",
+        "answer": "Books can be renewed online via the library portal or in person at the library desk.",
+        "tags": ["renew", "renewal", "library portal", "extend due date", "book renewal"]
+    },
+    {
+        "question": "What are the library's working hours?",
+        "answer": "The library is open Monday to Friday, 8 AM to 8 PM, and Saturday, 10 AM to 4 PM.",
+        "tags": ["hours", "open", "closing time", "schedule", "timings", "when open"]
+    },
+    {
+        "question": "Does the library provide Wi-Fi access?",
+        "answer": "Yes, the library offers free Wi-Fi for all visitors. The network name is 'Library_WiFi', and no password is required.",
+        "tags": ["wifi", "internet", "access", "wireless", "connect to Wi-Fi", "online access"]
+    },
+    {
+        "question": "What upcoming events are scheduled at the library?",
+        "answer": "The library hosts regular events such as book readings, workshops, and community gatherings. Check the library's event calendar on our website for details.",
+        "tags": ["event", "events", "workshop", "calendar", "activities", "happenings"]
+    },
+    {
+        "question": "Can I use computers at the library?",
+        "answer": "Yes, the library provides computers for public use. You can access them with a valid library card.",
+        "tags": ["computer", "public access", "library computers", "PC", "technology", "use computers"]
+    },
+    {
+        "question": "What happens if I return a book late?",
+        "answer": "Late returns incur a fine of $0.50 per day. Please return books on time to avoid penalties.",
+        "tags": ["late", "fine", "return", "overdue", "late fees"]
+    },
+    {
+        "question": "Can I reserve books that are already checked out?",
+        "answer": "Yes, you can place a hold on books through the library portal, and you'll be notified when they're available.",
+        "tags": ["reserve", "hold", "checked out", "waiting list", "book reservation"]
+    },
+    {
+        "question": "Does the library have printing and scanning facilities?",
+        "answer": "Yes, the library offers printing and scanning services for a small fee. Please visit the help desk for more information.",
+        "tags": ["printing", "scanning", "copying", "documents", "facilities"]
+    },
+    {
+        "question": "How do I get a library card?",
+        "answer": "You can apply for a library card at the front desk by providing a valid ID and proof of address.",
+        "tags": ["library card", "apply", "membership", "get card", "register"]
+    },
+    {
+        "question": "How do I get a student library card?",
+        "answer": "Students can apply for a library card by providing a valid student ID and proof of enrollment at the front desk.",
+        "tags": ["student card", "membership", "student ID", "register", "student library"]
+    },
+    {
+        "question": "Are there any fees for library services?",
+        "answer": "Most library services are free, but there are small fees for printing, scanning, and late book returns.",
+        "tags": ["fees", "cost", "printing", "scanning", "late returns"]
+    },
+    {
+        "question": "Can I borrow eBooks from the library?",
+        "answer": "Yes, the library offers a selection of eBooks that can be borrowed through the library's online portal.",
+        "tags": ["ebooks", "digital books", "borrow online", "library portal", "eBooks"]
+    },
+    {
+        "question": "How long can I borrow a book?",
+        "answer": "Books are typically borrowed for 2 weeks. You can renew them if you need more time.",
+        "tags": ["borrow", "duration", "loan period", "due date", "borrow time"]
+    },
+    {
+        "question": "Can I return books at any library branch?",
+        "answer": "Yes, you can return borrowed books to any branch of the library system.",
+        "tags": ["return", "any branch", "drop off", "library system", "book return"]
+    },
+    {
+        "question": "What is the maximum number of books I can borrow at once?",
+        "answer": "You can borrow up to 10 books at a time. Additional items may require special permission.",
+        "tags": ["borrow limit", "maximum books", "borrow count", "library rules"]
+    },
+    {
+        "question": "Is there a waiting list for popular books?",
+        "answer": "Yes, if a book is currently checked out, you can place a hold on it, and you'll be notified when it's available.",
+        "tags": ["waiting list", "popular books", "holds", "reservations"]
+    },
+    {
+        "question": "Can I donate books to the library?",
+        "answer": "Yes, the library accepts book donations. Please contact the library for guidelines on donations.",
+        "tags": ["donate", "book donation", "give books", "library donations"]
+    },
+    {
+        "question": "Does the library have a quiet study area?",
+        "answer": "Yes, the library has dedicated quiet study areas for individual work.",
+        "tags": ["study area", "quiet space", "individual work", "study room"]
+    },
+    {
+        "question": "Can I host an event at the library?",
+        "answer": "Yes, the library offers spaces that can be reserved for events. Please contact the library for availability and booking.",
+        "tags": ["host event", "library space", "booking", "reservations", "community events"]
+    },
+    {
+        "question": "How do I report a lost library card?",
+        "answer": "If your library card is lost or stolen, please report it immediately at the library desk or through the online portal.",
+        "tags": ["lost card", "library card", "report", "stolen card", "membership"]
+    }
+]

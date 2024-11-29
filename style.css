@@ -1,0 +1,253 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: url('pexels-pixabay-256559.jpg') no-repeat center center fixed;
+    background-size: cover; /* Ensures the image covers the entire viewport */
+  }
+.header {
+    text-align: center;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 20px;
+}
+
+h1 {
+    font-size: 3em;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+.chat-container {
+    width: 80%;
+    margin: 50px auto;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    color: #333;
+}
+
+.chat-box {
+    text-align: center;
+}
+
+textarea {
+    width: 90%;
+    height: 100px;
+    padding: 10px;
+    margin: 20px 0;
+    font-size: 1.2em;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    resize: none;
+}
+
+.tag-selection {
+    text-align: left;
+    margin: 10px auto;
+    width: 90%;
+}
+
+select {
+    width: 100%;
+    padding: 10px;
+    font-size: 1.2em;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+button {
+    background: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background: #45a049;
+}
+
+.response-box {
+    margin-top: 20px;
+    padding: 15px;
+    font-size: 1.2em;
+    border-radius: 5px;
+    background: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    text-align: left;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    backgro/* Reset default styles */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    
+    /* Basic body styling */
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f9;
+        color: #333;
+    }
+    
+    /* Header section */
+    header {
+        background-color: #2c3e50;
+        color: white;
+        text-align: center;
+        padding: 20px;
+    }
+    
+    /* Main content container */
+    .main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+    }
+    
+    /* Chat container */
+    .chat-container {
+        background-color: white;
+        border-radius: 8px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        max-width: 600px;
+        padding: 20px;
+        margin-bottom: 20px;
+    }
+    
+    /* Chat box where user types query */
+    textarea#query {
+        width: 100%;
+        height: 100px;
+        padding: 10px;
+        font-size: 16px;
+        border: 2px solid #ccc;
+        border-radius: 5px;
+        margin-bottom: 15px;
+        resize: none;
+        box-sizing: border-box;
+    }
+    
+    /* Dropdown for tags */
+    .tag-selection {
+        margin-bottom: 15px;
+    }
+    
+    .tag-selection select {
+        width: 100%;
+        height: 40px;
+        border-radius: 5px;
+        border: 2px solid #ccc;
+        padding: 5px;
+        font-size: 16px;
+    }
+    
+    /* Submit button */
+    button {
+        background-color: #3498db;
+        color: white;
+        padding: 10px 20px;
+        font-size: 16px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+    
+    button:hover {
+        background-color: #2980b9;
+    }
+    
+    /* Response box */
+    .response-box {
+        margin-top: 20px;
+        padding: 20px;
+        background-color: #fef8dd; /* Warm yellow to draw attention */
+        border-left: 8px solid #065b60; /* Add a bold accent color */
+        border-radius: 10px; /* Smooth rounded corners */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+        animation: fadeIn 0.5s ease-in-out; /* Smooth fade-in effect */
+        font-size: 16px; /* Slightly larger text */
+        font-weight: bold; /* Make text more readable */
+        color: #333; /* Neutral color for readability */
+      }
+      
+      .response-box p {
+        margin: 0;
+      }
+      
+      /* Keyframes for fade-in animation */
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    
+    /* History section */
+    .history {
+        display: none; /* Hidden by default */
+        background-color: #f8f9fa;
+        border-radius: 5px;
+        padding: 10px;
+        border: 1px solid #ddd;
+        max-height: 200px;
+        overflow-y: auto;
+      }
+      
+      .history h3 {
+        margin: 0;
+        font-size: 18px;
+        color: #065b60; /* Accent color for titles */
+      }
+      
+      .history ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+      
+      .history ul li {
+        margin-bottom: 10px;
+        padding: 10px;
+        background-color: #e9ecef;
+        border-radius: 5px;
+      }
+      
+      /* Button to toggle history */
+      .toggle-history {
+        background-color: #065b60;
+        color: white;
+        border: none;
+        padding: 10px 15px;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-top: 20px;
+      }
+      
+      .toggle-history:hover {
+        background-color: #df2164; /* Hover effect */
+      }
+    /* Footer section */
+    footer {
+        text-align: center;
+        margin-top: 40px;
+        padding: 10px;
+        background-color: #2c3e50;
+        color: white;
+        font-size: 14px;
+    }
+}

@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Library FAQ Chatbot</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: url(pexels-donghuangmingde-2177482.jpg);
+      background-size: cover;   
+    }
+    header {
+      background-color: rgba(18, 93, 96, 0.466);
+      color: white;
+      text-align: center;
+      padding: 20px 0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    header h1 {
+      margin: 0;
+      font-size: 24px;
+    }
+    .chat-container {
+      max-width: 800px;
+      margin: 20px auto;
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+    .header-image {
+      width: 100%;
+      height: auto;
+      max-height: 400px;
+      object-fit: cover;
+      display: block;
+      margin: 0 auto 20px;
+    }
+    .chat-box {
+      margin-bottom: 20px;
+    }
+    .chat-box textarea {
+      width: calc(100% - 20px);
+      height: 100px;
+      margin: 10px 0;
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      font-size: 14px;
+    }
+    .chat-box button {
+      background-color: #065b60;
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .chat-box button:hover {
+      background-color: #dd8c0a;
+    }
+    .tags-section {
+      margin-bottom: 20px;
+    }
+    .tags-section select {
+      width: 100%;
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    .response-box {
+      margin-top: 20px;
+      padding: 40px;
+      background-color: #8bb0a6;
+      border-left: 5px solid #b8782e;
+      border-radius: 5px;
+    }
+    .response-box p {
+      margin: 0;
+    }
+    .history {
+      margin-top: 20px;
+      padding: 10px;
+      background-color: #f8f9fa;
+      border-radius: 5px;
+      max-height: 200px;
+      overflow-y: auto;
+      border: 1px solid #ddd;
+    }
+    .history h3 {
+      margin-top: 0;
+    }
+    .history ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .history ul li {
+      margin-bottom: 10px;
+      padding: 10px;
+      background-color: #e1d3b4;
+      border-radius: 5px;
+    }
+    footer {
+      text-align: center;
+      padding: 10px;
+      background-color: #05483f6f;
+      color: white;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Library FAQ Chatbot</h1>
+  </header>
+
+  <main class="chat-container">
+    <img src="library-image.jpg" alt="Library Background" class="header-image">
+    <div class="tags-section">
+      <label for="tags"><b>Explore Topics:</b></label>
+      <select id="tags" onchange="sendTagQuery()">
+        <option value="" disabled selected>Select a topic...</option>
+      </select>
+    </div>
+    <div class="chat-box">
+      <textarea id="query" placeholder="Hello! How may I assist you today? :) "></textarea>
+      <button onclick="sendQuery()">Submit</button>
+    </div>
+    <div id="response" class="response-box">
+      <p>Response will appear here.</p>
+    </div>
+    <div class="history">
+      <h3>Conversations</h3>
+      <ul id="history-list"></ul>
+    </div>
+  </main>
+
+  
+  <footer>
+    <p>&copy; 2024 Library Chatbot. Designed by Adrian & Annlinet. All rights reserved.</p>
+    <p>support@diylibrary.com | Hotline: 017-024-789</p>
+  </footer>
+
+  <script>
+    const chatEndpoint = 'http://127.0.0.1:5001/chat';
+    const tagsEndpoint = 'http://127.0.0.1:5001/tags';
+
+    const tagsSelect = document.getElementById('tags');
+    const responseBox = document.getElementById('response');
+    const historyList = document.getElementById('history-list');
+
+    // Load diverse tags dynamically
+    async function loadTags() {
+      try {
+        const response = await fetch(tagsEndpoint);
+        const data = await response.json();
+        data.tags.forEach(tag => {
+          const option = document.createElement('option');
+          option.value = tag;
+          option.textContent = tag;
+          tagsSelect.appendChild(option);
+        });
+      } catch (error) {
+        console.error('Error loading tags:', error);
+      }
+    }
+
+    // Handle query submission
+    async function sendQuery() {
+      const query = document.getElementById('query').value.trim();
+      if (!query) {
+        alert('Please enter a question!');
+        return;
+      }
+      try {
+        const response = await fetch(chatEndpoint, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ question: query })
+        });
+        const data = await response.json();
+        if (data.answer) {
+          responseBox.innerHTML = `<p>${data.answer}</p>`;
+          updateHistory(query, data.answer);
+        } else {
+          responseBox.innerHTML = `<p>Sorry, no answer found.</p>`;
+        }
+      } catch (error) {
+        console.error('Error:', error);
+        alert('An error occurred. Please try again.');
+      }
+    }
+
+    // Handle tag selection
+    function sendTagQuery() {
+      const selectedTag = tagsSelect.value;
+      if (selectedTag) {
+        document.getElementById('query').value = selectedTag;
+        sendQuery();
+      }
+    }
+
+    // Update conversation history
+    function updateHistory(query, answer) {
+      const historyItem = document.createElement('li');
+      historyItem.innerHTML = `<strong>Q:</strong> ${query}<br><strong>A:</strong> ${answer}`;
+      historyList.appendChild(historyItem);
+    }
+
+    // Load tags on page load
+    window.onload = loadTags;
+  </script>
+</body>
+</html>
